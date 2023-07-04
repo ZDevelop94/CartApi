@@ -3,7 +3,7 @@ import model.{Apple, Cart, Orange}
 import org.scalatest.wordspec.AnyWordSpec
 
 class CheckoutServiceTest extends AnyWordSpec {
-  
+
   val checkoutService = new CheckoutService
 
   "checkout" should {
@@ -33,7 +33,7 @@ class CheckoutServiceTest extends AnyWordSpec {
       assert(result === 0.75)
     }
 
-    "return £2.20 when checking out with Apples and Oranges with 2 for 1 applied and 3 for 2" in {
+    "return £1.95 when checking out with Apples and Oranges with 2 for 1 applied and 3 for 2" in {
       val fruits = Seq(Orange, Orange, Apple, Orange, Orange, Apple, Apple)
       val cart = Cart(fruits)
       val result = checkoutService.checkout(cart)
